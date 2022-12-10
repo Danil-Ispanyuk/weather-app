@@ -1,5 +1,5 @@
-import React, { FC, PropsWithChildren } from 'react'
-import { HeaderContainer, SearchContainer } from '../../components'
+import { FC, PropsWithChildren } from 'react'
+import { HeaderContainer, Loader } from '../../components'
 import { IReactChildren } from '../../types/common.type'
 import * as Styled from "./style"
 
@@ -22,17 +22,11 @@ interface IHomeContainer{
   children: IReactChildren,
 }
 
-
-
 function HomeLayout ({children, theme, setTheme}: PropsWithChildren<IHomeContainer> & ContentComposition) {
-  
   return (
     <Styled.Container>
         <HeaderContainer theme={theme} setTheme={setTheme} />
-        <Styled.Search>
-          <SearchContainer />
-        </Styled.Search>
-        {/* {children}      */}
+        {false ? <Loader /> : children}     
     </Styled.Container>
   )
 }

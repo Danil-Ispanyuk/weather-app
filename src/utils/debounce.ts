@@ -1,4 +1,5 @@
 export const debounce = (fn: Function, ms = 300) => {
+  console.log("work")
   let timeoutId: ReturnType<typeof setTimeout>;
   return function (this: any, ...args: any[]) {
     clearTimeout(timeoutId);

@@ -1,1 +1,2 @@
-export { HomeContainer } from "./Home";
+export { HomeContainer } from "./Home/HomeContainer";
+export { FavouriteContainer } from "./Favourite/FavouriteContainer";

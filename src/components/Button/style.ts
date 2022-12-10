@@ -12,7 +12,7 @@ export const Container = styled.div<{
 `
 
 export const Button = styled.button<{
-    variant: ButtonVariant
+    variant: string | ButtonVariant
 }>`
     width: calc(100% - 4px);
     height: calc(100% - 4px);

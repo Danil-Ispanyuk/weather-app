@@ -1,14 +1,16 @@
-import React, { FC } from "react";
-import { Button, ButtonVariant } from "../Button/Button";
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../Button/Button";
 import { Switch } from "../Switch/Switch";
 import * as Styled from "./style";
 
 interface IHeader {
   isActive: boolean,
   handleTheme: () => void;
+  handleActiveButtonLink: (path: string) => string;
 }
 
-export const Header: FC<IHeader> = ({ isActive, handleTheme }) => {
+export const Header: FC<IHeader> = ({ isActive, handleTheme, handleActiveButtonLink }) => {
   return (
     <Styled.Container>
       <Styled.SwitchTheme>
@@ -16,8 +18,12 @@ export const Header: FC<IHeader> = ({ isActive, handleTheme }) => {
       </Styled.SwitchTheme>
 
       <Styled.Buttons>
-        <Button width="110px" height="45px">Home</Button>
-        <Button variant={ButtonVariant.outline} width="110px" height="45px">Favourite</Button>
+        <Link to="/home">
+          <Button variant={handleActiveButtonLink("/home")} width="110px" height="45px">Home</Button>
+        </Link>
+        <Link to="/favourite">
+          <Button variant={handleActiveButtonLink("/favourite")} width="110px" height="45px">Favourite</Button>
+        </Link>
       </Styled.Buttons>
     </Styled.Container>
   );

@@ -9,7 +9,8 @@ export enum ButtonVariant {
 interface IButton {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: ButtonVariant;
+  active?: () => boolean;
+  variant?: string | ButtonVariant;
   width?: string;
   height?: string;
 }
@@ -17,7 +18,7 @@ interface IButton {
 export const Button: FC<IButton> = ({
   children,
   onClick,
-  variant = ButtonVariant.default,
+  variant = ButtonVariant.outline,
   width = "auto",
   height = "auto",
 }) => {

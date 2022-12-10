@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { debounce } from '../../utils/debounce';
 import { Search } from './Search'
 

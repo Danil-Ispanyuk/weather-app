@@ -1,5 +1,3 @@
-// import { IThemes } from "../types/theme";
-
 enum Palitra {
     white = "#ffffff",
     black = "#000000",
@@ -35,8 +33,17 @@ export const themeConfig = {
         forecastTitle: Palitra.primary,
         forecastTemperature: Palitra.primary,
         forecastDetails: Palitra.primary,
+        dropdown: {
+            inputClr: Palitra.primary,
+            contentBorderClr: Palitra.primaryDeep,
+            optionsBcg: Palitra.primaryLight,
+            optionsClr: Palitra.primary,
+            optionHoverBcg: Palitra.primary,
+            optionHoverClr: Palitra.primaryLight,
+        }
     },
     dark: {
+        loaderBcg: Palitra.primary,
         activeUnitClr: Palitra.primaryLighter,
         buttonBcg: Palitra.primaryLighter,
         buttonClr: Palitra.midnight,
@@ -53,9 +60,16 @@ export const themeConfig = {
         switchBcgNoActive: Palitra.midnight,
         switchBcgActive: Palitra.primary,
         switchClr: Palitra.primaryLighter,
-        searchBcg: Palitra.primaryDeep,
         searchIconClr: Palitra.midnight,
         weatherInfoTitle: Palitra.primaryLight,
         weatherInfoText: Palitra.primaryLighter,
+        dropdown: {
+            inputClr: Palitra.primaryLight,
+            contentBorderClr: Palitra.primaryDeep,
+            optionsBcg: Palitra.primary,
+            optionsClr: Palitra.primaryLight,
+            optionHoverBcg: Palitra.primaryLight,
+            optionHoverClr: Palitra.primary,
+        }
     }
 }

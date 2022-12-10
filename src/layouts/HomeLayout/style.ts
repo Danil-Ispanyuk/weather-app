@@ -21,17 +21,10 @@ export const Content = styled.div`
     box-shadow: 0 0 10px 1px ${({theme}) => theme.contentShadow}20;
 `
 
-export const Search = styled.div`
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-`
-
 export const Forecast = styled.div`
     max-width: 1170px;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 40px;
     align-self: center;
     display: flex;
     flex-wrap: wrap;

@@ -1,3 +1,5 @@
+export { Loader } from "./Loader/Loader";
+export { DropDown } from "./DropDown/DropDown";
 export { ForecastWidgetContainer } from "./ForecastWidget/ForecastWidgetContainer";
 export { SearchContainer } from "./Search/SearchContainer";
 export { Switch } from "./Switch/Switch";

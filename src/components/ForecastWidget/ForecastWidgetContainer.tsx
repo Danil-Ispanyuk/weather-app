@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { TempUnits } from '../../containers/Home/HomeContainer';
 import { TemperatureUnitsType } from '../../types/forecast.type';
 import { ForecastWidget } from './ForecastWidget';
