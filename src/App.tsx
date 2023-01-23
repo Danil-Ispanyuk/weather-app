@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { FavouriteContainer, Home } from "./containers";
+import { Favourite, Home } from "./containers";
 import { HomeLayout } from "./layouts";
 import { store } from "./store/store";
 import { themeConfig } from "./theme";
@@ -38,7 +38,7 @@ function App() {
               path="/favourite"
               element={
                 <HomeLayout theme={theme} setTheme={setTheme}>
-                  <FavouriteContainer />
+                  <Favourite />
                 </HomeLayout>
               }
             />

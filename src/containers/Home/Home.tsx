@@ -9,8 +9,12 @@ import { OptionType } from "../../types/common.type";
 import { LocationValueType } from "../../types/location.type";
 import { debounce } from "../../utils/debounce";
 import { ForecastContainer } from "../Forecast/ForecastContainer";
-import { initialCityValue } from "./helper";
 import * as Styled from "./style";
+
+const initialCityValue = {
+  Key: '',
+  LocalizedName: ''
+}
 
 export const Home = () => {
   const params: { id?: string | undefined } = useParams();

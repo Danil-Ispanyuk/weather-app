@@ -1,16 +1,13 @@
-import { FC } from "react"
 import { useNavigate } from "react-router-dom"
 import { ForecastWidget } from "../../components"
 import { IAutoComplete } from "../../types/autocomplete.type"
 import * as Styled from "./style"
-interface IProps {
-  favourites: IAutoComplete[]
-}
 
-export const Favourite: FC<IProps> = ({
-  favourites
-}) => {
+export const Favourite = () => {
   const navigate = useNavigate();
+  const favourites: IAutoComplete[] = JSON.parse(
+    localStorage.getItem("favourites") || "{}"
+  );
   return (
     <Styled.Container>
       {!Array.isArray(favourites) ? <Styled.Content>

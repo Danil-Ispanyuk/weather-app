@@ -10,8 +10,8 @@ import {
   ForecastType,
 } from "../../types/forecast.type";
 import { IAutoComplete } from "../../types/autocomplete.type";
-import { getWeekDay } from "../../utils/getWeekDay";
 import { LocationValueType } from "../../types/location.type";
+import { getWeekDay } from "../../services/services";
 
 interface IHome {
   date: string;
