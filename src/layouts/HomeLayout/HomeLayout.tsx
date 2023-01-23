@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
-import { HeaderContainer, Loader } from '../../components'
+import { HeaderContainer } from '../../components'
 import { IReactChildren } from '../../types/common.type'
 import * as Styled from "./style"
 
@@ -26,7 +26,7 @@ function HomeLayout ({children, theme, setTheme}: PropsWithChildren<IHomeContain
   return (
     <Styled.Container>
         <HeaderContainer theme={theme} setTheme={setTheme} />
-        {false ? <Loader /> : children}     
+        {children}     
     </Styled.Container>
   )
 }

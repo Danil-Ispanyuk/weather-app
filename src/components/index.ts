@@ -1,7 +1,7 @@
+export { ContentLoader } from "./Loader/ContentLoader";
 export { Loader } from "./Loader/Loader";
 export { DropDown } from "./DropDown/DropDown";
-export { ForecastWidgetContainer } from "./ForecastWidget/ForecastWidgetContainer";
-export { SearchContainer } from "./Search/SearchContainer";
+export { ForecastWidget } from "./ForecastWidget/ForecastWidget";
 export { Switch } from "./Switch/Switch";
 export { Header } from "./Header/Header";
 export { Button } from "./Button/Button";

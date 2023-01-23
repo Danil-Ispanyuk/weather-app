@@ -57,4 +57,18 @@ export const Option = styled.p`
     }
 `
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div``;
+
+export const Empty = styled.div`
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: ${({ theme }) => theme.dropdown.optionsClr};
+    border-radius: 0 0 25px 25px;
+    border: 2px solid ${({theme}) => theme.dropdown.contentBorderClr};
+    border-top: none;
+    max-height: 45px;
+`

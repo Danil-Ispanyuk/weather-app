@@ -1,11 +1,18 @@
 import * as Styled from "./style"
-import LoaderGif from "../../assets/loader/loader.gif"
-export const Loader = () => {
+import LoaderGif from "../../assets/loader/infinity_loader.gif"
+import { FC } from "react";
+
+interface IProps {
+  styles?: {
+    width?: string;
+    margin?: string;
+  }
+}
+
+export const Loader: FC<IProps> = ({styles}) => {
   return (
-    <Styled.LoaderContainer>
-      <Styled.LoaderContent>
+    <Styled.Wrapper styles={styles}>
           <Styled.LoaderImg src={LoaderGif} />
-      </Styled.LoaderContent>
-    </Styled.LoaderContainer>
+    </Styled.Wrapper>
   )
 }

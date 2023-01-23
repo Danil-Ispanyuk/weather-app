@@ -19,10 +19,10 @@ export const Header: FC<IHeader> = ({ isActive, handleTheme, handleActiveButtonL
 
       <Styled.Buttons>
         <Link to="/home">
-          <Button variant={handleActiveButtonLink("/home")} width="110px" height="45px">Home</Button>
+          <Button variant={handleActiveButtonLink("home")} width="110px" height="45px">Home</Button>
         </Link>
         <Link to="/favourite">
-          <Button variant={handleActiveButtonLink("/favourite")} width="110px" height="45px">Favourite</Button>
+          <Button variant={handleActiveButtonLink("favourite")} width="110px" height="45px">Favourite</Button>
         </Link>
       </Styled.Buttons>
     </Styled.Container>
