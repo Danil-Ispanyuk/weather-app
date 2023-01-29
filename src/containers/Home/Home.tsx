@@ -12,9 +12,9 @@ import { ForecastContainer } from "../Forecast/ForecastContainer";
 import * as Styled from "./style";
 
 const initialCityValue = {
-  Key: '',
-  LocalizedName: ''
-}
+  Key: "",
+  LocalizedName: "",
+};
 
 export const Home = () => {
   const params: { id?: string | undefined } = useParams();
@@ -27,14 +27,16 @@ export const Home = () => {
   } = useGetLocationQuery(params.id, {
     skip: !params.id,
   });
-  const [selectedCity, setSelectedCity] = useState<IAutoComplete | LocationValueType>(initialCityValue);
+  const [selectedCity, setSelectedCity] = useState<
+    IAutoComplete | LocationValueType
+  >(initialCityValue);
   const [searchValue, setSearchValue] = useState<string>("");
   const [cities, setCities] = useState<OptionType[]>([]);
   const {
     data: autoSearchData,
     isLoading: citiesLoader,
     isError: isSearchError,
-    error: searchError, 
+    error: searchError,
   } = useGetCitiesQuery(searchValue, {
     skip: searchValue.length < 2,
   });
@@ -62,7 +64,6 @@ export const Home = () => {
     setCities([]);
   };
   const handleChange = debounce((value: string) => setSearchValue(value), 500);
-
   return (
     <>
       <Styled.Search>
@@ -75,17 +76,21 @@ export const Home = () => {
           loader={citiesLoader}
         />
       </Styled.Search>
-      {
-        LocationLoader ? <ContentLoader />
-        : isSearchError ? <Styled.ErrorMessage>
-            {getError(searchError)}
-          </Styled.ErrorMessage>
-        : isLocationError ? <Styled.ErrorMessage>
-            {getError(locationError)}
-          </Styled.ErrorMessage>
-        : !(LocationData || selectedCity.Key) && params.id ? <Styled.ErrorMessage>Sorry, but we can't find your city</Styled.ErrorMessage>
-        : (LocationData || selectedCity.Key) && <ForecastContainer selectedCity={LocationData || selectedCity} />
-      }
+      {LocationLoader ? (
+        <ContentLoader />
+      ) : isSearchError ? (
+        <Styled.ErrorMessage>{getError(searchError)}</Styled.ErrorMessage>
+      ) : isLocationError ? (
+        <Styled.ErrorMessage>{getError(locationError)}</Styled.ErrorMessage>
+      ) : !(LocationData || selectedCity.Key) && params.id ? (
+        <Styled.ErrorMessage>
+          Sorry, but we can't find your city
+        </Styled.ErrorMessage>
+      ) : (
+        (LocationData || selectedCity.Key) && (
+          <ForecastContainer selectedCity={LocationData || selectedCity} />
+        )
+      )}
     </>
   );
 };
