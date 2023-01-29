@@ -4,6 +4,9 @@ export const Container = styled.div`
   max-width: 200px;
   width: 100%;
   margin: 15px;
+  @media (max-width: 470px) {
+    max-width: 250px;
+  }
 `;
 export const Content = styled.div<{
   isFavourite: boolean | undefined;

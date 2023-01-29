@@ -1,6 +1,5 @@
 import { FC } from "react";
 import * as Styled from "./style";
-import Sun from "../../assets/sun.png";
 import { Button, ForecastWidget, Switch } from "../../components";
 import { ButtonVariant } from "../../components/Button/Button";
 import { HomeLayout } from "../../layouts";
@@ -16,11 +15,11 @@ import { getWeekDay } from "../../services/services";
 interface IHome {
   date: string;
   forecasts: ForecastType[] | undefined;
-  currentForecast: CurrentForecastType | undefined,
+  currentForecast: CurrentForecastType | undefined;
   currentTemperature: CurrentTempValueType | undefined;
   isActiveTempUnit: boolean;
   handleTempUnit: () => void;
-  selectedCity: LocationValueType,
+  selectedCity: LocationValueType;
   onSelectFavourite: (value: IAutoComplete | LocationValueType) => void;
   isFavourite: boolean;
 }
@@ -43,15 +42,17 @@ export const Forecast: FC<IHome> = ({
           <Styled.Header>
             <Styled.CityContent>
               <Styled.IconContainer>
-                <Styled.WeatherIcon src={Sun} />
+                <Styled.WeatherIcon iconNum={currentForecast?.WeatherIcon} />
               </Styled.IconContainer>
               <Styled.Details>
                 <Styled.CityInfo>
-                  <Styled.CityName>{selectedCity.LocalizedName}</Styled.CityName>
+                  <Styled.CityName>
+                    {selectedCity.LocalizedName}
+                  </Styled.CityName>
                   <Styled.CityTemperature>
                     {currentTemperature?.Value}
                     <Styled.TemperatureUnit>
-                    °{currentTemperature?.Unit}
+                      °{currentTemperature?.Unit}
                     </Styled.TemperatureUnit>
                   </Styled.CityTemperature>
                 </Styled.CityInfo>
@@ -73,10 +74,12 @@ export const Forecast: FC<IHome> = ({
                 <Button
                   width="150px"
                   height="40px"
-                  variant={isFavourite ? ButtonVariant.default : ButtonVariant.outline}
+                  variant={
+                    isFavourite ? ButtonVariant.default : ButtonVariant.outline
+                  }
                   onClick={() => onSelectFavourite(selectedCity)}
                 >
-                  {isFavourite ? "Your Favourite" : 'Add to Favourite'}
+                  {isFavourite ? "Your Favourite" : "Add to Favourite"}
                 </Button>
               </Styled.Favourite>
             </Styled.Configurate>
@@ -86,7 +89,9 @@ export const Forecast: FC<IHome> = ({
             <Styled.WeatherList>
               <Styled.WeatherItem>
                 <Styled.WeatherTitle>Weather:</Styled.WeatherTitle>
-                <Styled.WeatherText>{currentForecast?.WeatherText}</Styled.WeatherText>
+                <Styled.WeatherText>
+                  {currentForecast?.WeatherText}
+                </Styled.WeatherText>
               </Styled.WeatherItem>
             </Styled.WeatherList>
           </Styled.WeatherInfo>

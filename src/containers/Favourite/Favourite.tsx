@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom"
-import { ForecastWidget } from "../../components"
-import { IAutoComplete } from "../../types/autocomplete.type"
-import * as Styled from "./style"
+import { useNavigate } from "react-router-dom";
+import { ForecastWidget } from "../../components";
+import { IAutoComplete } from "../../types/autocomplete.type";
+import * as Styled from "./style";
 
 export const Favourite = () => {
   const navigate = useNavigate();
@@ -10,17 +10,21 @@ export const Favourite = () => {
   );
   return (
     <Styled.Container>
-      {!Array.isArray(favourites) ? <Styled.Content>
-        Add your favorite cities at "Home" page
-      </Styled.Content> : favourites?.map((forecast, index) => (
-          <ForecastWidget
-            onClick={() => navigate(`/home/${forecast.Key}`)}
-            isFavourite={true}
-            key={index}
-            title={forecast.LocalizedName}
-            details={forecast.Key}
-          />
-        ))}
+      {!Array.isArray(favourites) ? (
+        <Styled.Content>Add your favorite cities at "Home" page</Styled.Content>
+      ) : (
+        <Styled.Wrapper>
+          {favourites?.map((forecast, index) => (
+            <ForecastWidget
+              onClick={() => navigate(`/home/${forecast.Key}`)}
+              isFavourite={true}
+              key={index}
+              title={forecast.LocalizedName}
+              details={forecast.Key}
+            />
+          ))}
+        </Styled.Wrapper>
+      )}
     </Styled.Container>
-  )
-}
+  );
+};
